@@ -54,9 +54,9 @@ public class OverWorkAspect {
 
         String key = reqMap.get("key");
 
-        log.info("--------------返回内容----------------");
-        log.info("Response内容:" + JSON.toJSONString(o));
-        log.info("--------------返回内容----------------");
+//        log.info("--------------返回内容----------------");
+//        log.info("Response内容:" + JSON.toJSONString(o));
+//        log.info("--------------返回内容----------------");
 
         mqSender.send(key);
     }

@@ -25,6 +25,17 @@ spring:
         acknowledge-mode: manual
   application:
     name: api-ctl-one
+  mail:
+    host: smtp.126.com
+    username: 邮箱用户名
+    password: 邮箱密码
+    properties:
+      mail:
+        smtp:
+          auth: true  # 需要验证登录名和密码
+        starttls:
+          enable: true  # 需要TLS认证 保证发送邮件安全验证
+          required: true
 #mybatis
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
@@ -60,5 +71,7 @@ xxl:
       port: 8881
       logpath: /data/applogs/xxl-job/jobhandler
       logretentiondays: -1
+
+
 server:
-  port: 8091
+  port: 8080

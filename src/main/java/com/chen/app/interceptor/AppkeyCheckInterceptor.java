@@ -24,19 +24,16 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.CellEditor;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
-import java.util.Date;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 1.判断key是否存在
@@ -170,12 +167,16 @@ public class AppkeyCheckInterceptor implements HandlerInterceptor {
                  * Arrays.binarySearch(args, str);
                  * loop 效率最高
                  */
-                for (String ip : split_ip) {
-                    if (!ip.equals(req_ip)) {
-                        output(response, R.err_1005());
-                        return false;
-                    }
+                if (!Arrays.asList(split_ip).contains(req_ip)){
+                    output(response, R.err_1005());
+                    return false;
                 }
+//                for (String ip : split_ip) {
+//                    if (ip.equals(req_ip)) {
+//                        output(response, R.err_1005());
+//                        return false;
+//                    }
+//                }
             }
 
             return true;

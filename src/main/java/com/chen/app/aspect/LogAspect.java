@@ -18,7 +18,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -43,11 +42,11 @@ public class LogAspect {
                 .getRequestAttributes();
         HttpServletRequest request = requestAttributes.getRequest();
         // 打印请求内容
-        log.info("===============请求内容===============");
-        log.info("请求地址:" + request.getRequestURL().toString());
-        log.info("请求方式:" + request.getMethod());
-        log.info("请求类方法:" + joinPoint.getSignature());
-        log.info("请求类方法参数:" + Arrays.toString(joinPoint.getArgs()));
+//        log.info("===============请求内容===============");
+//        log.info("请求地址:" + request.getRequestURL().toString());
+//        log.info("请求方式:" + request.getMethod());
+//        log.info("请求类方法:" + joinPoint.getSignature());
+//        log.info("请求类方法参数:" + Arrays.toString(joinPoint.getArgs()));
 
         Object[] args = joinPoint.getArgs();
         String classType = joinPoint.getTarget().getClass().getName();
@@ -56,8 +55,8 @@ public class LogAspect {
         String methodName = joinPoint.getSignature().getName(); // 获取方法名称
         // 获取参数名称和值
         StringBuffer sb = LogAopUtil.getNameAndArgs(this.getClass(), clazzName, methodName, args);
-        log.info("请求类方法参数名称和值：" + sb);
-        log.info("===============请求内容===============");
+//        log.info("请求类方法参数名称和值：" + sb);
+//        log.info("===============请求内容===============");
     }
 
 

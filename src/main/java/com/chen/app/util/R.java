@@ -89,6 +89,13 @@ public class R extends HashMap<String, Object> {
     public static R err_203802() { return error(203802, "错误的身份证或无结果"); }
     public static R err_203803() { return error(203803, "身份证校验位不正确"); }
     public static R err_203804() { return error(203804, "查询失败"); }
+    /*********************************************************************************************/
+    public static R err_201901() { return error(201901, "图片过大"); }
+    public static R err_201902() { return error(201902, "姓名不能为空"); }
+    public static R err_201903() { return error(201903, "身份证号码不能为空"); }
+    public static R err_201904() { return error(201904, "请输入正确的身份证"); }
+    public static R err_201905() { return error(201904, "查询失败"); }
+    /*********************************************************************************************/
 
 }
 
